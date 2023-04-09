@@ -23,8 +23,6 @@ services:
     depends_on:
       - backend
     container_name: kpd-frontend
-    links:
-      - backend
     ports:
       - '8081:80'
     restart: on-failure
@@ -34,7 +32,7 @@ services:
       - .env
     container_name: kpd-database
     volumes:
-      - database:/process.env.POSTGRES_PGDATA
+      - database:/process.env.POSTGRES_DATA
     ports:
       - '5432:5432'
     restart: on-failure
