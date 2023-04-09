@@ -32,7 +32,7 @@ services:
       - .env
     container_name: kpd-database
     volumes:
-      - database:/process.env.POSTGRES_DATA
+      - database:/process.env.POSTGRES_PGDATA
     ports:
       - '5432:5432'
     restart: on-failure
